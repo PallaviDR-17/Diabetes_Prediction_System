@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>🩺 Diabetes Prediction System</h2>
+    <form action="/predict" method="POST">
+        <input type="text" name="Pregnancies" placeholder="Pregnancies" required><br>
+        <input type="text" name="Glucose" placeholder="Glucose" required><br>
+        <input type="text" name="BloodPressure" placeholder="Blood Pressure" required><br>
+        <input type="text" name="SkinThickness" placeholder="Skin Thickness" required><br>
+        <input type="text" name="Insulin" placeholder="Insulin" required><br>
+        <input type="text" name="BMI" placeholder="BMI" required><br>
+        <input type="text" name="DiabetesPedigreeFunction" placeholder="Pedigree Function" required><br>
+        <input type="text" name="Age" placeholder="Age" required><br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
